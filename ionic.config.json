@@ -1,6 +1,6 @@
 {
   "name": "mycom-angular-ionic-mycomapp",
-  "app_id": "",
+  "app_id": "de59efc2",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
