@@ -1,6 +1,6 @@
 #Dependencies
 
-1) Install android studio from ubuntu software center
+1) Install android studio from ubuntu software center, open it for execute initial setup
 
 2) install Oracle JDK 
 
@@ -10,13 +10,18 @@
     
     ```sudo apt-get install oracle-java8-installer```
     
-3) accept all SDK's licensens using this command:  navigate to android's directory ```cd /home/{user}//Android/Sdk/tools/bin``` after execute this command: ```./sdkmanager --licenses```
+3) accept all SDK's licensens using this command:  navigate to android's directory ```cd /home/{user}/Android/Sdk/tools/bin``` after execute this command: ```./sdkmanager --licenses```
 
 4) set paths with these commands: open bashrc with ```nano ~/.bashrc``` and add these lines at the bottom of the file:
-    '#JAVA_HOME
+    
+    '#JAVA_HOME'
+    
     export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-    '#Android SDK
+    
+    '#Android SDK'
+    
     export ANDROID_HOME=/home/{user}/Android/Sdk
+    
     export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
     
 5) install Gradle: ```sudo apt install gradle```
