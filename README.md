@@ -10,7 +10,7 @@
     
     ```sudo apt-get install oracle-java8-installer```
     
-3) accept all SDK's licensens using this command:  navigate to android's directory ```cd /home/{user}/Android/Sdk/tools/bin``` after execute this command: ```./sdkmanager --licenses```
+3) accept all SDK's licensens using this command:  navigate to android's directory ```cd /home/<user>/Android/Sdk/tools/bin``` after execute this command: ```./sdkmanager --licenses```
 
 4) set paths with these commands: open bashrc with ```nano ~/.bashrc``` and add these lines at the bottom of the file:
     
@@ -19,8 +19,7 @@
     export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
     #Android SDK
     export ANDROID_HOME=/home/{user}/Android/Sdk
-    export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-    ```
+    export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools```
     
 5) install Gradle: ```sudo apt install gradle```
 
@@ -30,11 +29,13 @@
 
 #useful commands:
 
+first of one install package.json dependencies with ```npm install```
+
 to list installed platforms: ```ionic cordova platform list```
 
-to remove installed plaform: ```ionic cordova rm <name_platform>```
+to remove installed plaform: ```ionic cordova platform rm <name_platform>```
 
-to add installed plaform: ```ionic cordova add <name_platform>```
+to add installed plaform: ```ionic cordova platform add <name_platform>```
 
 to serve app: ```ionic serve```
 
