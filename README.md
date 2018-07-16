@@ -14,15 +14,13 @@
 
 4) set paths with these commands: open bashrc with ```nano ~/.bashrc``` and add these lines at the bottom of the file:
     
-    '#JAVA_HOME'
-    
+    ```
+    #JAVA_HOME
     export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-    
-    '#Android SDK'
-    
+    #Android SDK
     export ANDROID_HOME=/home/{user}/Android/Sdk
-    
     export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+    ```
     
 5) install Gradle: ```sudo apt install gradle```
 
