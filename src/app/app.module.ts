@@ -8,19 +8,25 @@ import {TabsPage} from '../pages/tabs/tabs';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
+import {BalanceComponent} from "../balance/balance.component";
 
 @NgModule({
     declarations: [
         MyApp,
         HomePage,
-        TabsPage
+        TabsPage,
+        BalanceComponent
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp).providers,
-        HttpClientModule
+        // import HttpClientModule after BrowserModule.
+        HttpClientModule,
+        HttpClientXsrfModule.withOptions({
+            cookieName: 'My-Xsrf-Cookie',
+            headerName: 'My-Xsrf-Header',
+        }),
+        IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],
     entryComponents: [

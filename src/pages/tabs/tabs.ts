@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
 
 @Component({
-  templateUrl: 'tabs.html'
+    templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
+    tab1Root = HomePage;
 
-  constructor() {
+    constructor() {
 
-  }
+    }
 }
