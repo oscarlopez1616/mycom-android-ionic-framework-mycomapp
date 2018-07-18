@@ -15,7 +15,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class balanceService {
+export class userService {
     balanceUrl = 'https://randomuser.me/api/';
     balanceUrlPost = 'https://httpbin.org/post';
 

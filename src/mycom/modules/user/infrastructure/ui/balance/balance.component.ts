@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {BalanceEndPoint, balanceService} from './balance.service';
+import {BalanceEndPoint, userService} from '../../../application/balance.service';
 
 @Component({
     selector: 'app-balance',
     templateUrl: './balance.component.html',
-    providers: [balanceService],
+    providers: [userService],
     styles: ['.error {color: red;}']
 })
 export class BalanceComponent {
@@ -12,7 +12,7 @@ export class BalanceComponent {
     headers: string[];
     balanceEndPoint: BalanceEndPoint;
 
-    constructor(private balanceService: balanceService) {
+    constructor(private balanceService: userService) {
     }
 
     clear() {
