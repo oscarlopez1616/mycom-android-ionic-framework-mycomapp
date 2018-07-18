@@ -1,19 +1,19 @@
 import {NgModule, ErrorHandler} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
-import {MyApp} from './app.component';
+import {MycomCustomerApp} from './app.component';
 
-import {HomePage} from '../pages/home/home';
-import {TabsPage} from '../pages/tabs/tabs';
+import {HomePage} from '../code/infrastructure/ui/pages/home/home';
+import {TabsPage} from '../code/infrastructure/ui/pages/tabs/tabs';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
-import {BalanceComponent} from "../balance/balance.component";
+import {BalanceComponent} from "../code/infrastructure/ui/balance/balance.component";
 
 @NgModule({
     declarations: [
-        MyApp,
+        MycomCustomerApp,
         HomePage,
         TabsPage,
         BalanceComponent
@@ -26,11 +26,11 @@ import {BalanceComponent} from "../balance/balance.component";
             cookieName: 'My-Xsrf-Cookie',
             headerName: 'My-Xsrf-Header',
         }),
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MycomCustomerApp)
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-        MyApp,
+        MycomCustomerApp,
         HomePage,
         TabsPage
     ],
