@@ -1,11 +1,12 @@
 <h3>Get configuration from JSON file</h3>
 <div>
     <button (click)="clear(); showBalance()">get</button>
+    <button (click)="clear(); showBalance()">postResponse</button>
     <button (click)="clear(); showBalanceResponse()">getResponse</button>
+    <button (click)="clear(); addBalance()">addBalance</button>
     <button (click)="clear()">clear</button>
     <span *ngIf="balanceEndPoint">
-    <p>Balance API URL is "{{balanceEndPoint.balanceUrl}}"</p>
-    <p>Textfile URL is "{{balanceEndPoint.dataText}}"</p>
+    <p>Content "{{balanceEndPoint.gender}}"</p>
     <div *ngIf="headers">
       Response headers:
       <ul>

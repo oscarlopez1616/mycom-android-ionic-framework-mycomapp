@@ -1,32 +1,44 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 
 import {Observable} from 'rxjs';
 import {retry} from 'rxjs/operators';
 
 export interface BalanceEndPoint {
-    balanceUrl: string;
-    dataText: string;
+    gender: string;
 }
 
+const httpOptions = {
+    headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+    })
+};
+
 @Injectable()
-export class BalanceService {
-    balanceUrl = 'assets/balance.json';
+export class balanceService {
+    balanceUrl = 'https://randomuser.me/api/';
+    balanceUrlPost = 'https://httpbin.org/post';
+
 
     constructor(private http: HttpClient) { }
 
-    getBalance() {
-        return this.http.get<BalanceEndPoint>(this.balanceUrl)
+    public balance() {
+        return this.http.get(this.balanceUrl)
             .pipe(
-                retry(3), // retry a failed request up to 3 times
+                retry(3),
                 //catchError(this.handleError) // then handle the error
             );
     }
 
-    getBalanceResponse(): Observable<HttpResponse<BalanceEndPoint>> {
+    public addBalance(){
+        return this.http.post(this.balanceUrlPost, null, httpOptions)
+            .pipe(
+            );
+    }
+
+    public balanceResponse(): Observable<HttpResponse<BalanceEndPoint>> {
         return this.http.get<BalanceEndPoint>(
             this.balanceUrl, { observe: 'response' });
     }
 
 }
-

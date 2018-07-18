@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { BalanceEndPoint, BalanceService } from './balance.service';
+import {Component} from '@angular/core';
+import {BalanceEndPoint, balanceService} from './balance.service';
 
 @Component({
     selector: 'app-balance',
     templateUrl: './balance.component.html',
-    providers: [ BalanceService ],
+    providers: [balanceService],
     styles: ['.error {color: red;}']
 })
 export class BalanceComponent {
@@ -12,7 +12,8 @@ export class BalanceComponent {
     headers: string[];
     balanceEndPoint: BalanceEndPoint;
 
-    constructor(private balanceService: BalanceService) {}
+    constructor(private balanceService: balanceService) {
+    }
 
     clear() {
         this.balanceEndPoint = undefined;
@@ -20,16 +21,23 @@ export class BalanceComponent {
         this.headers = undefined;
     }
 
-    showBalance() {
-        this.balanceService.getBalance()
+    public showBalance() {
+        this.balanceService.balance()
             .subscribe(
-                (data: BalanceEndPoint) => this.balanceEndPoint = { ...data },
+                (data: BalanceEndPoint) => this.balanceEndPoint = {
+                    gender: data['results'][0]['gender']
+                },
                 error => this.error = error // error path
             );
     }
 
-    showBalanceResponse() {
-        this.balanceService.getBalanceResponse()
+    public addBalance() {
+        this.balanceService.addBalance()
+            .subscribe(data => console.log(data));
+    }
+
+    public showBalanceResponse() {
+        this.balanceService.balanceResponse()
         // resp is of type `HttpResponse<Config>`
             .subscribe(resp => {
                 // display its headers
@@ -38,7 +46,7 @@ export class BalanceComponent {
                     `${key}: ${resp.headers.get(key)}`);
 
                 // access the body directly, which is typed as `Config`.
-                this.balanceEndPoint = { ... resp.body };
+                this.balanceEndPoint = {...resp.body};
             });
     }
 }
