@@ -1,4 +1,4 @@
-export interface UserDto {
+export interface AddUserCommand {
     userId: string;
     emailAddress: string;
     name: string;

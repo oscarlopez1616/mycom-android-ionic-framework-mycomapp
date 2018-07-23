@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {retry} from 'rxjs/operators';
 import {Observable} from "rxjs/Observable";
+import {User} from "../domain/user";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -18,7 +19,7 @@ export class GetUserService {
         this.urlEndpoint = 'https://httpbin.org/post';
     }
 
-    public execute(): Observable<user> {
+    public execute(): Observable<User> {
         return this.http.get(this.urlEndpoint,httpOptions)
             .pipe(
                 retry(3),

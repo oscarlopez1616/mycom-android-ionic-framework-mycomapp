@@ -1,4 +1,4 @@
-import {Uuid} from "../../shared/domain/uuid";
+import {Uuid} from "../../common/types/uuid";
 
 
 export class UserId extends Uuid {
@@ -6,3 +6,4 @@ export class UserId extends Uuid {
         super(value);
     }
 }
+

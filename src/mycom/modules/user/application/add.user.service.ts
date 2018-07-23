@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs/Observable";
+import {AddUserCommand} from "./add.user.command";
+import {AggregateRootDto} from "../../common/dto/aggregate.root.dto";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -17,9 +19,10 @@ export class AddUserService {
         this.urlEndpoint = 'https://httpbin.org/post';
     }
 
-    public execute(): Observable<any> {
-        return this.http.post(this.urlEndpoint, null, httpOptions)
+    public execute(command: AddUserCommand): Observable<AggregateRootDto> {
+        return this.http.post<AggregateRootDto>(this.urlEndpoint, command , httpOptions)
             .pipe(
+                //TODO manage errors
             );
     }
 
