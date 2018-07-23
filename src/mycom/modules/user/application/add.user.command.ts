@@ -1,12 +1,12 @@
 export interface AddUserCommand {
-    userId: string;
-    emailAddress: string;
-    name: string;
-    firstLastName: string;
-    secondLastName: string;
-    language: string;
-    country: string;
-    city: string;
+    readonly userId: string;
+    readonly emailAddress: string;
+    readonly name: string;
+    readonly firstLastName?: string;
+    readonly secondLastName?: string;
+    readonly language: string;
+    readonly country: string;
+    readonly city: string;
 }
 
 
