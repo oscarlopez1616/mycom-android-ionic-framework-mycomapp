@@ -1,5 +1,5 @@
 {
-  "name": "Mycom Customer App",
+  "name": "MycomCustomerApp",
   "version": "0.0.1",
   "author": "MyCom",
   "homepage": "http://www.mycom.global/",
@@ -30,7 +30,8 @@
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26",
-    "cordova-android": "~7.0.0"
+    "cordova-android": "~7.0.0",
+    "uuid": "~3.3.2"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.11",

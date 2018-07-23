@@ -1,6 +1,9 @@
 import {EmailAddress} from "./email.address";
-import {Language} from "./language";
-import {Country} from "./country";
+import {Language} from "../../shared/domain/language";
+import {Country} from "../../shared/domain/country";
+import {City} from "../../shared/domain/city";
+import {UserId} from "./user.id";
+import {CompleteName} from "./complete.name";
 
 export class User {
     private _userId: UserId;
@@ -11,26 +14,26 @@ export class User {
     private _city: City;
 
     constructor(userId: UserId,
-                emailAddress: Email,
-                compleName: CompleteName,
+                emailAddress: EmailAddress,
+                completeName: CompleteName,
                 language: Language,
                 country: Country,
                 city: City
     ) {
-        this._userId;
+        this._userId = userId;
         this._emailAddress = emailAddress;
-        this._completeName = compleName;
+        this._completeName = completeName;
         this._language = language;
         this._country = country;
         this._city = city;
     }
 
     public userId(): UserId {
-        return this.userId;
+        return this._userId;
     }
 
-    public emailAddress(): Email {
-        return this.emailAddress;
+    public emailAddress(): EmailAddress {
+        return this._emailAddress;
     }
 
     public completeName(): CompleteName {
@@ -38,14 +41,14 @@ export class User {
     }
 
     public language(): Language {
-        return this.language;
+        return this._language;
     }
 
     public country(): Country {
-        return this.country;
+        return this._country;
     }
 
     public city(): City {
-        return this.city;
+        return this._city;
     }
 }
