@@ -1,6 +1,6 @@
-import {NgModule, ErrorHandler} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MycomCustomerApp} from './app.component';
 
 import {HomePage} from '../mycom/modules/user/infrastructure/ui/pages/home/home';
@@ -9,14 +9,15 @@ import {TabsPage} from '../mycom/modules/user/infrastructure/ui/pages/tabs/tabs'
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
-import {BalanceComponent} from "../mycom/modules/user/infrastructure/ui/balance/balance.component";
+import {UserComponent} from "../mycom/modules/user/infrastructure/ui/user/user.component";
+import {AddUserService} from "../mycom/modules/user/application/add.user.service";
 
 @NgModule({
     declarations: [
         MycomCustomerApp,
         HomePage,
         TabsPage,
-        BalanceComponent
+        UserComponent
     ],
     imports: [
         BrowserModule,
@@ -37,7 +38,8 @@ import {BalanceComponent} from "../mycom/modules/user/infrastructure/ui/balance/
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        AddUserService
     ]
 })
 export class AppModule {

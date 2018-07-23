@@ -4,7 +4,7 @@ import {Country} from "../../shared/domain/country";
 import {City} from "../../shared/domain/city";
 import {UserId} from "./user.id";
 import {CompleteName} from "./complete.name";
-import {AggregateRoot} from "../../common/types/domain.entity";
+import {AggregateRoot} from "../../common/types/aggregate.root";
 
 export class User extends AggregateRoot{
     private _userId: UserId;

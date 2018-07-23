@@ -9,11 +9,11 @@ export class Uuid {
 
     private setValue(value: string) {
         //TODO check string is a valid uuid, if not throw InvalidUuidFormatException
-        this._value = uuid.fromString(value);
+        this._value = value;
     }
 
     public static create(): Uuid {
-        return uuid();
+        return new Uuid(uuid());
     }
 
     public value(): string {
