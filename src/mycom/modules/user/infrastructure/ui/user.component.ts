@@ -2,15 +2,15 @@ import {Component} from '@angular/core';
 import {AddUserCommandHandler} from "../../application/add.user.command.handler";
 import {UserId} from "../../domain/user.id";
 import {AddUserService} from "../../application/add.user.service";
-import {RxjsObservableRepository} from "../persistence/rxjs/RxjsObservableRepository";
 import {UserObservableRepository} from "../../domain/userObservableRepository";
+import {RxjsUserObservableRepository} from "../persistence/rxjs/rxjs.user.observable.repository.service";
 
 @Component({
     selector: 'app-user',
     templateUrl: './user.component.html',
-    providers: [AddUserCommandHandler, AddUserService,RxjsObservableRepository, {
+    providers: [AddUserCommandHandler, AddUserService,RxjsUserObservableRepository, {
         provide: UserObservableRepository,
-        useExisting: RxjsObservableRepository
+        useExisting: RxjsUserObservableRepository
     }],
     styles: ['.error {color: red;}']
 })

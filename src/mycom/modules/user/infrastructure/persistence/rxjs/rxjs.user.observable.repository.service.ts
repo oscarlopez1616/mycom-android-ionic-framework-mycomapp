@@ -11,7 +11,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class RxjsObservableRepository extends UserObservableRepository{
+export class RxjsUserObservableRepository extends UserObservableRepository{
 
     private urlEndpoint: string;
 
