@@ -1,6 +1,6 @@
 import {InvalidCityFormatException} from "./invalid.city.format.exception";
 
-export class City {
+export class CityValueObject {
     private _value: string;
 
     constructor(value: string) {

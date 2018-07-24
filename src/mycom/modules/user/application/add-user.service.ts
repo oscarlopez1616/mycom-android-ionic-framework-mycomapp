@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs/Observable";
-import {AddUserCommand} from "./add.user.command";
-import {UserObservableRepository} from "../domain/userObservableRepository";
+import {AddUserCommand} from "./add-user.command";
+import {UserObservableRepository} from "../domain/user.observable-repository";
 
 @Injectable()
 export class AddUserService {

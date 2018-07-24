@@ -1,7 +1,7 @@
-import {InvalidNameFormatException} from "./invalid.name.format.exception";
+import {InvalidSecondLastNameFormatException} from "./invalid-second-last-name-format.exception";
 
 
-export class Name {
+export class SecondLastNameValueObject {
     private _value: string;
 
     constructor(value: string) {
@@ -20,7 +20,7 @@ export class Name {
     private guardNotEmpty(value: string): void{
         let regex = /^.*$/;
         if(!regex.test(value.toLowerCase())){
-            throw new InvalidNameFormatException();
+            throw new InvalidSecondLastNameFormatException();
         }
     }
 

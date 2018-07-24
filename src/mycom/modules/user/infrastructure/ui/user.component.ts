@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {AddUserCommandHandler} from "../../application/add.user.command.handler";
-import {UserId} from "../../domain/user.id";
-import {AddUserService} from "../../application/add.user.service";
-import {UserObservableRepository} from "../../domain/userObservableRepository";
-import {RxjsUserObservableRepository} from "../persistence/rxjs/rxjs.user.observable.repository.service";
+import {AddUserCommandHandler} from "../../application/add-user.command-handler";
+import {UserIdValueObject} from "../../domain/user-id.value-object";
+import {AddUserService} from "../../application/add-user.service";
+import {UserObservableRepository} from "../../domain/user.observable-repository";
+import {RxjsUserObservableRepository} from "../persistence/rxjs/rxjs-user-observable-repository.service";
 
 @Component({
     selector: 'app-user',
@@ -23,7 +23,7 @@ export class UserComponent {
 
     public addUser(): void {
         let command = {
-                id: UserId.create().value(),
+                id: UserIdValueObject.create().value(),
                 emailAddress: 'oscar.lopez@mycom.global',
                 name: 'oscar',
                 firstLastName: 'lopez',

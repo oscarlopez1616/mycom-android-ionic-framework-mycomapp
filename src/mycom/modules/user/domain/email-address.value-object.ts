@@ -1,6 +1,6 @@
-import {InvalidEmailAddressFormatException} from "./invalid.email.address.format.exception";
+import {InvalidEmailAddressFormatException} from "./invalid-email-address-format.exception";
 
-export class EmailAddress {
+export class EmailAddressValueObject {
     private _value: string;
 
     constructor(value: string) {

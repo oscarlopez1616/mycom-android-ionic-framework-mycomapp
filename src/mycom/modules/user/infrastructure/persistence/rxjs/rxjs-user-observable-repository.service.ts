@@ -1,7 +1,7 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs/Observable";
-import {UserObservableRepository} from "../../../domain/userObservableRepository";
-import {AddUserCommand} from "../../../application/add.user.command";
+import {UserObservableRepository} from "../../../domain/user.observable-repository";
+import {AddUserCommand} from "../../../application/add-user.command";
 import {Injectable} from "@angular/core";
 
 const httpOptions = {

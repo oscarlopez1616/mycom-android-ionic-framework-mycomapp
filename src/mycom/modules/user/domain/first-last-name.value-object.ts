@@ -1,7 +1,7 @@
-import {InvalidFirstLastNameFormatException} from "./invalid.first.last.name.format.exception";
+import {InvalidFirstLastNameFormatException} from "./invalid-first-last-name-format.exception";
 
 
-export class FirstLastName {
+export class FirstLastNameValueObject {
     private _value: string;
 
     constructor(value: string) {

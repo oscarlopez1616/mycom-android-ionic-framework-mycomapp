@@ -1,6 +1,6 @@
-import {InvalidLanguageFormatException} from "./invalid.language.format.exception";
+import {InvalidLanguageFormatException} from "./invalid-language-format.exception";
 
-export class Language {
+export class LanguageValueObject {
     private _value: string;
 
     constructor(value: string) {

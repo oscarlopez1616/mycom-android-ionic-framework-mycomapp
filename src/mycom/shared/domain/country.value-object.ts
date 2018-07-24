@@ -1,6 +1,6 @@
 import {InvalidCountryFormatException} from "./invalid.country.format.exception";
 
-export class Country {
+export class CountryValueObject {
     private _value: string;
 
     constructor(value: string) {

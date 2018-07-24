@@ -1,7 +1,7 @@
 import {Uuid} from "../../../../common/types/uuid";
 
 
-export class UserId extends Uuid {
+export class UserIdValueObject extends Uuid {
     constructor(value: string) {
         super(value);
     }
