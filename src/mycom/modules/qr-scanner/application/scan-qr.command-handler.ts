@@ -16,7 +16,7 @@ export class ScanQrCommandHandler implements CommandHandler {
     return this._barcodeScanner.scan(      {
       preferFrontCamera : false,
       showTorchButton : true, // iOS and Android
-      prompt : "Scanea tu codigo de Pago MyCom", // Android
+      prompt : "Escanea tu codigo de Pago MyCom", // Android
       resultDisplayDuration: 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
       formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
       orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
