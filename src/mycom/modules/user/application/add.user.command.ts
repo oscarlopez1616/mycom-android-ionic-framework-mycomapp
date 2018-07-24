@@ -1,5 +1,5 @@
 export interface AddUserCommand {
-    readonly userId: string;
+    readonly id: string;
     readonly emailAddress: string;
     readonly name: string;
     readonly firstLastName?: string;

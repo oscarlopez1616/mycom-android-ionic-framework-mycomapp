@@ -26,9 +26,10 @@ export class AddUserCommandHandler implements CommandHandler{
         this.validate(command);
         let aggregateRootDto = this._addUserService.execute(command);
         var createdAt;
-        aggregateRootDto.subscribe(dto => createdAt = dto.createdAt).unsubscribe();
+        aggregateRootDto.subscribe(dto => console.log(dto));
+        //aggregateRootDto.subscribe(dto => createdAt = dto.createdAt).unsubscribe();
         return new User(
-            new UserId(command.userId),
+            new UserId(command.id),
             new EmailAddress(command.emailAddress),
             new CompleteName(
                 new Name(command.name),
@@ -44,7 +45,6 @@ export class AddUserCommandHandler implements CommandHandler{
     }
 
     private validate(command: AddUserCommand) {
-        UserId.create();
         new EmailAddress(command.emailAddress);
         new Name(command.name);
         new FirstLastName(command.firstLastName);

@@ -18,7 +18,7 @@ export class Name {
     }
 
     private guardNotEmpty(value: string): void{
-        let regex = /^.$/;
+        let regex = /^.*$/;
         if(!regex.test(value.toLowerCase())){
             throw new InvalidNameFormatException();
         }

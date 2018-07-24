@@ -3,8 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MycomCustomerApp} from './app.component';
 
-import {HomePage} from '../mycom/modules/tab.main.menu/infrastructure/ui/tab.pages/home/home';
-import {TabsPage} from '../mycom/modules/tab.main.menu/infrastructure/ui/tabs';
+import {HomePage} from '../mycom/modules/tab.menu.home/infrastructure/ui/tab.pages/home/home';
+import {TabsPage} from '../mycom/modules/tab.menu.home/infrastructure/ui/tabs';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';

@@ -1,29 +1,27 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs/Observable";
 import {AddUserCommand} from "./add.user.command";
-import {AggregateRootDto} from "../../../../common/dto/aggregate.root.dto";
-
-const httpOptions = {
-    headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-    })
-};
+import {UserObservableRepository} from "../domain/userObservableRepository";
 
 @Injectable()
 export class AddUserService {
 
-    private urlEndpoint: string;
+    private  _observableRepository: UserObservableRepository;
 
-    constructor(private http: HttpClient) {
-        this.urlEndpoint = 'https://httpbin.org/post';
+    constructor(observableRepository: UserObservableRepository) {
+        this._observableRepository = observableRepository;
     }
 
-    public execute(command: AddUserCommand): Observable<AggregateRootDto> {
+    public execute(command: AddUserCommand): Observable<any> {
+        return this._observableRepository.addUser(command);
+    }
+
+
+    /*public execute(command: AddUserCommand): Observable<AggregateRootDto> {
         return this.http.post<AggregateRootDto>(this.urlEndpoint, command , httpOptions)
             .pipe(
                 //TODO manage errors
             );
-    }
+    }*/
 
 }

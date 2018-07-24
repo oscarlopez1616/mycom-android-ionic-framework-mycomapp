@@ -18,7 +18,6 @@ export class City {
 
     private guardThreeCapitalizedWords(value: string): void {
         let regex = /^[A-Z]{3}$/;
-        regex.test(value);
         if (!regex.test(value)) {
             throw new InvalidCityFormatException();
         }

@@ -2,11 +2,16 @@ import {Component} from '@angular/core';
 import {AddUserCommandHandler} from "../../application/add.user.command.handler";
 import {UserId} from "../../domain/user.id";
 import {AddUserService} from "../../application/add.user.service";
+import {RxjsObservableRepository} from "../persistence/rxjs/RxjsObservableRepository";
+import {UserObservableRepository} from "../../domain/userObservableRepository";
 
 @Component({
     selector: 'app-user',
     templateUrl: './user.component.html',
-    providers: [AddUserCommandHandler,AddUserService],
+    providers: [AddUserCommandHandler, AddUserService,RxjsObservableRepository, {
+        provide: UserObservableRepository,
+        useExisting: RxjsObservableRepository
+    }],
     styles: ['.error {color: red;}']
 })
 export class UserComponent {
@@ -16,9 +21,9 @@ export class UserComponent {
     constructor(private addUserCommandHandler: AddUserCommandHandler) {
     }
 
-    public addBalance(): void {
+    public addUser(): void {
         let command = {
-                userId: UserId.create(),
+                id: UserId.create().value(),
                 emailAddress: 'oscar.lopez@mycom.global',
                 name: 'oscar',
                 firstLastName: 'lopez',
@@ -28,8 +33,7 @@ export class UserComponent {
                 city: 'BCN',
             }
         ;
-        //console.log(this.addUserCommandHandler.handle(command));
-        console.log(command);
+        this.addUserCommandHandler.handle(command);
     }
 
 }
