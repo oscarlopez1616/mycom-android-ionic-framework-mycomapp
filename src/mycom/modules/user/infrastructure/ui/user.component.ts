@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {AddUserCommandHandler} from "../../../application/add.user.command.handler";
-import {UserId} from "../../../domain/user.id";
-import {AddUserService} from "../../../application/add.user.service";
+import {AddUserCommandHandler} from "../../application/add.user.command.handler";
+import {UserId} from "../../domain/user.id";
+import {AddUserService} from "../../application/add.user.service";
 
 @Component({
     selector: 'app-user',
     templateUrl: './user.component.html',
-    providers: [AddUserCommandHandler],
+    providers: [AddUserCommandHandler,AddUserService],
     styles: ['.error {color: red;}']
 })
 export class UserComponent {

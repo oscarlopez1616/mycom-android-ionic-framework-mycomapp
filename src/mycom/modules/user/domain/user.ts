@@ -1,10 +1,10 @@
 import {EmailAddress} from "./email.address";
-import {Language} from "../../shared/domain/language";
-import {Country} from "../../shared/domain/country";
-import {City} from "../../shared/domain/city";
+import {Language} from "../../../shared/domain/language";
+import {Country} from "../../../shared/domain/country";
+import {City} from "../../../shared/domain/city";
 import {UserId} from "./user.id";
 import {CompleteName} from "./complete.name";
-import {AggregateRoot} from "../../common/types/aggregate.root";
+import {AggregateRoot} from "../../../../common/types/aggregate.root";
 
 export class User extends AggregateRoot{
     private _userId: UserId;

@@ -3,14 +3,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MycomCustomerApp} from './app.component';
 
-import {HomePage} from '../mycom/modules/user/infrastructure/ui/pages/home/home';
-import {TabsPage} from '../mycom/modules/user/infrastructure/ui/pages/tabs/tabs';
+import {HomePage} from '../mycom/modules/tab.main.menu/infrastructure/ui/tab.pages/home/home';
+import {TabsPage} from '../mycom/modules/tab.main.menu/infrastructure/ui/tabs';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
-import {UserComponent} from "../mycom/modules/user/infrastructure/ui/user/user.component";
-import {AddUserService} from "../mycom/modules/user/application/add.user.service";
+import {UserComponent} from "../mycom/modules/user/infrastructure/ui/user.component";
 
 @NgModule({
     declarations: [
@@ -38,8 +37,7 @@ import {AddUserService} from "../mycom/modules/user/application/add.user.service
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler},
-        AddUserService
+        {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })
 export class AppModule {

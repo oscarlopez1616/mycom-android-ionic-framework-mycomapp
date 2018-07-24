@@ -1,4 +1,4 @@
-import {Uuid} from "../../common/types/uuid";
+import {Uuid} from "../../../../common/types/uuid";
 
 
 export class UserId extends Uuid {

@@ -1,5 +1,5 @@
 import {AddUserCommand} from "./add.user.command";
-import {City} from "../../shared/domain/city";
+import {City} from "../../../shared/domain/city";
 import {AddUserService} from "./add.user.service";
 import {User} from "../domain/user";
 import {EmailAddress} from "../domain/email.address";
@@ -7,12 +7,13 @@ import {UserId} from "../domain/user.id";
 import {Name} from "../domain/name";
 import {FirstLastName} from "../domain/first.last.name";
 import {SecondLastName} from "../domain/second.last.name";
-import {Language} from "../../shared/domain/language";
-import {Country} from "../../shared/domain/country";
-import {CommandHandler} from "../../common/types/command.handler";
+import {Language} from "../../../shared/domain/language";
+import {Country} from "../../../shared/domain/country";
+import {CommandHandler} from "../../../../common/types/command.handler";
 import {CompleteName} from "../domain/complete.name";
+import {Injectable} from "@angular/core";
 
-
+@Injectable()
 export class AddUserCommandHandler implements CommandHandler{
 
     private _addUserService: AddUserService;

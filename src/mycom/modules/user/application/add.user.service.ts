@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs/Observable";
 import {AddUserCommand} from "./add.user.command";
-import {AggregateRootDto} from "../../common/dto/aggregate.root.dto";
+import {AggregateRootDto} from "../../../../common/dto/aggregate.root.dto";
 
 const httpOptions = {
     headers: new HttpHeaders({
