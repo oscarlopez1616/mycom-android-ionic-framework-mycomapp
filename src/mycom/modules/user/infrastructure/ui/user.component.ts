@@ -4,21 +4,28 @@ import {UserIdValueObject} from "../../domain/user-id.value-object";
 import {AddUserService} from "../../application/add-user.service";
 import {UserObservableRepository} from "../../domain/user.observable-repository";
 import {RxjsUserObservableRepository} from "../persistence/rxjs/rxjs-user-observable-repository.service";
+import {ScanQrCommandHandler} from "../../../qr-scanner/application/scan-qr.command-handler";
+import {BarcodeScanner} from "@ionic-native/barcode-scanner";
 
 @Component({
     selector: 'app-user',
     templateUrl: './user.component.html',
-    providers: [AddUserCommandHandler, AddUserService,RxjsUserObservableRepository, {
+    providers: [AddUserCommandHandler, AddUserService, RxjsUserObservableRepository, {
         provide: UserObservableRepository,
         useExisting: RxjsUserObservableRepository
-    }],
-    styles: ['.error {color: red;}']
+    }, ScanQrCommandHandler, BarcodeScanner],
+    styles: ['.error {color: red;} p']
 })
 export class UserComponent {
     error: any;
     headers: string[];
+    private _addUserCommandHandler: AddUserCommandHandler;
+    private _scanQrCommandHandler: ScanQrCommandHandler;
+    private _code : string;
 
-    constructor(private addUserCommandHandler: AddUserCommandHandler) {
+    constructor(addUserCommandHandler: AddUserCommandHandler, scanQrCommandHandler: ScanQrCommandHandler) {
+        this._addUserCommandHandler = addUserCommandHandler;
+        this._scanQrCommandHandler = scanQrCommandHandler;
     }
 
     public addUser(): void {
@@ -33,7 +40,14 @@ export class UserComponent {
                 city: 'BCN',
             }
         ;
-        this.addUserCommandHandler.handle(command);
+        this._addUserCommandHandler.handle(command);
+    }
+
+    public scanCodeQr() {
+        let command = {
+            idAction: 'testActivity'
+        }
+        this._code = this._scanQrCommandHandler.handle(command);
     }
 
 }
