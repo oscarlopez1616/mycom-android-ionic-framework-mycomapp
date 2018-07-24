@@ -26,6 +26,7 @@ export class UserComponent {
     constructor(addUserCommandHandler: AddUserCommandHandler, scanQrCommandHandler: ScanQrCommandHandler) {
         this._addUserCommandHandler = addUserCommandHandler;
         this._scanQrCommandHandler = scanQrCommandHandler;
+        this._code = 'nothing';
     }
 
     public addUser(): void {
@@ -47,7 +48,11 @@ export class UserComponent {
         let command = {
             idAction: 'testActivity'
         }
-        this._code = this._scanQrCommandHandler.handle(command);
+        this._scanQrCommandHandler.handle(command).then(barcodeData => {
+          this._code = barcodeData.text;
+        }).catch(err => {
+          this._code = err.toString();
+        });
     }
 
 }

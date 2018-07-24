@@ -1,7 +1,7 @@
-<h3>User EndPoint</h3>
+<h3>Test several things</h3>
 <div>
-    <button (click)="addUser()">add User</button>
-    <button (click)="scanCodeQr()">scan Code Qr</button>
+    <button ion-button color="dark" full round (click)="addUser()">Add User</button>
+    <button ion-button color="dark" full round (click)="scanCodeQr()">Scan QR</button>
     <p>el codigo scaneado es: {{_code}}</p>
 </div>
 <p *ngIf="error" class="error">{{error | json}}</p>
