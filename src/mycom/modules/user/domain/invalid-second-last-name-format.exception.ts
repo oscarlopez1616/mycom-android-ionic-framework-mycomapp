@@ -2,4 +2,8 @@ import {InvalidDomainFormatException} from "../../../shared/domain/invalid-domai
 
 export class InvalidSecondLastNameFormatException extends InvalidDomainFormatException{
 
+    constructor(message: string) {
+        super(message);
+    }
+
 }

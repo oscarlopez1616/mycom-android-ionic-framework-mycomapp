@@ -4,13 +4,26 @@ import {SecondLastNameValueObject} from "./second-last-name.value-object";
 
 
 export class CompleteNameValueObject {
-    readonly name: NameValueObject;
-    readonly firstLastName: FirstLastNameValueObject;
-    readonly secondLastName: SecondLastNameValueObject;
+    private _name: NameValueObject;
+    private _firstLastName: FirstLastNameValueObject;
+    private _secondLastName: SecondLastNameValueObject;
 
     constructor(name: NameValueObject, firstLastName: FirstLastNameValueObject, secondLastName: SecondLastNameValueObject) {
-        this.name = name;
-        this.firstLastName = firstLastName;
-        this.secondLastName = secondLastName;
+        this._name = name;
+        this._firstLastName = firstLastName;
+        this._secondLastName = secondLastName;
+    }
+
+
+    public name(): NameValueObject {
+        return this._name;
+    }
+
+    public firstLastName(): FirstLastNameValueObject {
+        return this._firstLastName;
+    }
+
+    public secondLastName(): SecondLastNameValueObject {
+        return this._secondLastName;
     }
 }

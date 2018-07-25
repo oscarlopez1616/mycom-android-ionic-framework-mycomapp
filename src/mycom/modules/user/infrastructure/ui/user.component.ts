@@ -4,7 +4,7 @@ import {UserIdValueObject} from "../../domain/user-id.value-object";
 import {AddUserService} from "../../application/add-user.service";
 import {UserObservableRepository} from "../../domain/user.observable-repository";
 import {RxjsUserObservableRepository} from "../persistence/rxjs/rxjs-user-observable-repository.service";
-import {ScanQrCommandHandler} from "../../../qr-scanner/application/scan-qr.command-handler";
+import {ScanQrCommandHandler} from "../../../com-transaction/application/scan-qr.command-handler";
 import {BarcodeScanner} from "@ionic-native/barcode-scanner";
 
 @Component({

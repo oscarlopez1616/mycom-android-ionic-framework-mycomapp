@@ -7,7 +7,7 @@ import {CompleteNameValueObject} from "./complete-name.value-object";
 import {AggregateRoot} from "../../../../common/types/aggregate.root";
 
 export class UserEntity extends AggregateRoot{
-    private _userId: UserIdValueObject;
+    private _id: UserIdValueObject;
     private _emailAddress: EmailAddressValueObject;
     private _completeName: CompleteNameValueObject;
     private _language: LanguageValueObject;
@@ -25,7 +25,7 @@ export class UserEntity extends AggregateRoot{
 
     ) {
         super(createdAt, updatedAt);
-        this._userId = userId;
+        this._id = userId;
         this._emailAddress = emailAddress;
         this._completeName = completeName;
         this._language = language;
@@ -33,8 +33,8 @@ export class UserEntity extends AggregateRoot{
         this._city = city;
     }
 
-    public userId(): UserIdValueObject {
-        return this._userId;
+    public id(): UserIdValueObject {
+        return this._id;
     }
 
     public emailAddress(): EmailAddressValueObject {

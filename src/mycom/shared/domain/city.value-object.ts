@@ -8,18 +8,18 @@ export class CityValueObject {
     }
 
     private setValue(value: string) {
-        this.guard(value);
+        this.guardValue(value);
         this._value = value;
     }
 
-    private guard(value: string): void {
+    private guardValue(value: string): void {
         return this.guardThreeCapitalizedWords(value);
     }
 
     private guardThreeCapitalizedWords(value: string): void {
         let regex = /^[A-Z]{3}$/;
         if (!regex.test(value)) {
-            throw new InvalidCityFormatException();
+            throw new InvalidCityFormatException(value);
         }
     }
 

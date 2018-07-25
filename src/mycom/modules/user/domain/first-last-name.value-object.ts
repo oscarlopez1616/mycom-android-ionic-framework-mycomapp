@@ -9,18 +9,18 @@ export class FirstLastNameValueObject {
     }
 
     private setValue(value: string): void {
-        this.guard(value);
+        this.guardValue(value);
         this._value = value;
     }
 
-    private guard(value: string): void {
+    private guardValue(value: string): void {
         this.guardNotEmpty(value);
     }
 
     private guardNotEmpty(value: string): void{
         let regex = /^.*$/;
         if(!regex.test(value.toLowerCase())){
-            throw new InvalidFirstLastNameFormatException();
+            throw new InvalidFirstLastNameFormatException(value);
         }
     }
 

@@ -9,11 +9,11 @@ export class SecondLastNameValueObject {
     }
 
     private setValue(value: string): void {
-        this.guard(value);
+        this.guardValue(value);
         this._value = value;
     }
 
-    private guard(value: string): void {
+    private guardValue(value: string): void {
         this.guardNotEmpty(value);
     }
 

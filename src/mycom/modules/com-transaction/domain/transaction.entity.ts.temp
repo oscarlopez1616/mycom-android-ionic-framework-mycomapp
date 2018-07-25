@@ -1,0 +1,37 @@
+import {AggregateRoot} from "../../../../common/types/aggregate.root";
+import {CanNotSetMtnAlreadyInitializedException} from "./can-not-set-mtn-already-initialized.exception";
+
+export class ComTransactionEntity extends AggregateRoot {
+
+    private _id: TransactionIdValueObject;
+    private _statusValueObject: StatusValueObject;
+    private _mtnValueObject: MtnValueObject|null;
+
+
+    constructor(createdAt: Date, updatedAt: Date, id: TransactionIdValueObject, statusValueObject: StatusValueObject, mtnValueObject?: MtnValueObject) {
+        super(createdAt, updatedAt);
+        this._id = id;
+        this._statusValueObject = statusValueObject;
+        this._mtnValueObject = mtnValueObject;
+    }
+
+    public id(): TransactionIdValueObject {
+        return this._id;
+    }
+
+    public statusValueObject(): StatusValueObject {
+        return this._statusValueObject;
+    }
+
+    public mtnValueObject(): MtnValueObject|null {
+        return this._mtnValueObject;
+    }
+
+
+    public setMtnValueObject(value: MtnValueObject | null): void {
+        if(this._mtnValueObject !== null){
+            throw new CanNotSetMtnAlreadyInitializedException(value);
+        }
+            this._mtnValueObject = value;
+    }
+}
