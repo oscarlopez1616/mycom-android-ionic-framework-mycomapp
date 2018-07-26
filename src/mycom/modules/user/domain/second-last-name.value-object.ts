@@ -20,7 +20,7 @@ export class SecondLastNameValueObject {
     private guardNotEmpty(value: string): void{
         let regex = /^.*$/;
         if(!regex.test(value.toLowerCase())){
-            throw new InvalidSecondLastNameFormatException();
+            throw new InvalidSecondLastNameFormatException(value);
         }
     }
 

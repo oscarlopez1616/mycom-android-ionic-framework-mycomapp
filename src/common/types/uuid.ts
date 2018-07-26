@@ -20,9 +20,9 @@ export class Uuid {
 
     private guardIsUuid(value: string): void{
         //TODO check string is a valid uuid, if not throw InvalidUuidFormatException
-        if(true) {
+        /*if(true) {
             throw new InvalidUuidFormatException(value);
-        }
+        }*/
     }
 
     public static create(): Uuid {

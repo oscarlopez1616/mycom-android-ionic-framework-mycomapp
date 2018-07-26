@@ -1,4 +1,4 @@
-const enum state {
+const enum mntState {
     transactionInitialized = 'transactionInitialized',
     transactionReady = 'transactionReady',
     transactionSuccess = 'transactionSuccess'
@@ -12,15 +12,15 @@ export class StatusValueObject {
     }
 
     public static createTransactionInitialized() {
-        this.constructor(state.transactionInitialized);
+        this.constructor(mntState.transactionInitialized);
     }
 
     public static createTransactionReady() {
-        this.constructor(state.transactionReady);
+        this.constructor(mntState.transactionReady);
     }
 
     public static createTransactionSuccess() {
-        this.constructor(state.transactionSuccess);
+        this.constructor(mntState.transactionSuccess);
     }
 
     public value(): string {

@@ -6,6 +6,7 @@ import {UserObservableRepository} from "../../domain/user.observable-repository"
 import {RxjsUserObservableRepository} from "../persistence/rxjs/rxjs-user-observable-repository.service";
 import {ScanQrCommandHandler} from "../../../com-transaction/application/scan-qr.command-handler";
 import {BarcodeScanner} from "@ionic-native/barcode-scanner";
+import {MtnOperationTypeValueObject} from "../../../com-transaction/domain/mtnOperationType.value-object";
 
 @Component({
     selector: 'app-user',
@@ -21,7 +22,7 @@ export class UserComponent {
     headers: string[];
     private _addUserCommandHandler: AddUserCommandHandler;
     private _scanQrCommandHandler: ScanQrCommandHandler;
-    private _code : string;
+    private _code: string;
 
     constructor(addUserCommandHandler: AddUserCommandHandler, scanQrCommandHandler: ScanQrCommandHandler) {
         this._addUserCommandHandler = addUserCommandHandler;
@@ -31,16 +32,15 @@ export class UserComponent {
 
     public addUser(): void {
         let command = {
-                id: UserIdValueObject.create().value(),
-                emailAddress: 'oscar.lopez@mycom.global',
-                name: 'oscar',
-                firstLastName: 'lopez',
-                secondLastName: 'labrador',
-                language: 'ES',
-                country: 'ES',
-                city: 'BCN',
-            }
-        ;
+            id: UserIdValueObject.create().value(),
+            emailAddress: 'oscar.lopez@mycom.global',
+            name: 'oscar',
+            firstLastName: 'lopez',
+            secondLastName: 'labrador',
+            language: 'ES',
+            country: 'ES',
+            city: 'BCN',
+        };
         this._addUserCommandHandler.handle(command);
     }
 
@@ -49,9 +49,9 @@ export class UserComponent {
             idAction: 'testActivity'
         }
         this._scanQrCommandHandler.handle(command).then(barcodeData => {
-          this._code = barcodeData.text;
+            this._code = barcodeData.text;
         }).catch(err => {
-          this._code = err.toString();
+            this._code = err.toString();
         });
     }
 
