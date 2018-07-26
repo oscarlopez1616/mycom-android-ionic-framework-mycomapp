@@ -1,7 +1,7 @@
 import {CountryValueObject} from "../../../shared/domain/country.value-object";
 
-const enum state {
-    transaction = 10,
+const enum operationType {
+    operation = 10,
     transfer = 20
 }
 
@@ -16,8 +16,13 @@ export class MtnValueObject {
         this._date = date;
     }
 
-    public static createFromString(){
+    public static createFromString(mtn: string): MtnValueObject{
 
+        return this.constructor(
+            new CountryValueObject(),
+            operationType.operation,
+            new Date()
+        );
     }
 
     public mtn(): string{
