@@ -32,8 +32,4 @@ export class Uuid {
     public value(): string {
         return this._value;
     }
-
-    public toString (): string{
-        return this.value();
-    }
 }

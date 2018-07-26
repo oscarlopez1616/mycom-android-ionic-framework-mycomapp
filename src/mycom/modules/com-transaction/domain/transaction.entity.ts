@@ -1,5 +1,8 @@
 import {AggregateRoot} from "../../../../common/types/aggregate.root";
 import {CanNotSetMtnAlreadyInitializedException} from "./can-not-set-mtn-already-initialized.exception";
+import {TransactionIdValueObject} from "./transaction-id.value-object";
+import {StatusValueObject} from "./status.value-object";
+import {MtnValueObject} from "./mtn.value-object";
 
 export class ComTransactionEntity extends AggregateRoot {
 
@@ -28,9 +31,9 @@ export class ComTransactionEntity extends AggregateRoot {
     }
 
 
-    public setMtnValueObject(value: MtnValueObject | null): void {
+    public initMtnValueObject(value: MtnValueObject | null): void {
         if(this._mtnValueObject !== null){
-            throw new CanNotSetMtnAlreadyInitializedException(value);
+            throw new CanNotSetMtnAlreadyInitializedException(value.mtn());
         }
             this._mtnValueObject = value;
     }
