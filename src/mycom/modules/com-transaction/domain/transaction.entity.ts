@@ -30,7 +30,6 @@ export class ComTransactionEntity extends AggregateRoot {
         return this._mtnValueObject;
     }
 
-
     public initMtnValueObject(value: MtnValueObject | null): void {
         if(this._mtnValueObject !== null){
             throw new CanNotSetMtnAlreadyInitializedException(value.mtn());
