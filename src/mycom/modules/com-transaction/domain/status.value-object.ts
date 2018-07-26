@@ -1,6 +1,7 @@
 const enum state {
-    preTransaction = 1,
-    transactionSuccess = 0
+    transactionInitialized = 'transactionInitialized',
+    transactionReady = 'transactionReady',
+    transactionSuccess = 'transactionSuccess'
 }
 
 export class StatusValueObject {
@@ -10,8 +11,12 @@ export class StatusValueObject {
         this._value = value;
     }
 
-    public static createPreTransactionStatus() {
-        this.constructor(state.preTransaction);
+    public static createTransactionInitialized() {
+        this.constructor(state.transactionInitialized);
+    }
+
+    public static createTransactionReady() {
+        this.constructor(state.transactionReady);
     }
 
     public static createTransactionSuccess() {
