@@ -6,7 +6,7 @@ import {UserObservableRepository} from "../../domain/user.observable-repository"
 import {RxjsUserObservableRepository} from "../persistence/rxjs/rxjs-user-observable-repository.service";
 import {ScanQrCommandHandler} from "../../../com-transaction/application/scan-qr.command-handler";
 import {BarcodeScanner} from "@ionic-native/barcode-scanner";
-import {MtnOperationTypeValueObject} from "../../../com-transaction/domain/mtnOperationType.value-object";
+import {MtnOperationTypeValueObject} from "../../../com-transaction/domain/mtn-operation-type.value-object";
 
 @Component({
     selector: 'app-user',

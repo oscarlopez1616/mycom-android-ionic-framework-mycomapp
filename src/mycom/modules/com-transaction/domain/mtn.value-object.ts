@@ -1,12 +1,13 @@
 import {CountryValueObject} from "../../../shared/domain/country.value-object";
+import {MtnOperationTypeValueObject} from "./mtn-operation-type.value-object";
 
 
 export class MtnValueObject {
     private _country: CountryValueObject;
-    private _operationType: string;
+    private _operationType: MtnOperationTypeValueObject;
     private _date: Date;
 
-    private constructor(country: CountryValueObject, operationType: string, date: Date) {
+    private constructor(country: CountryValueObject, operationType: MtnOperationTypeValueObject, date: Date) {
         this._country = country;
         this._operationType = operationType;
         this._date = date;
@@ -21,13 +22,13 @@ export class MtnValueObject {
         let seconds = parseInt(mtn.substring(16, 18));
         return new MtnValueObject(
             new CountryValueObject(mtn.substring(0, 2)),
-            mtn.substring(2, 4),
+            new MtnOperationTypeValueObject(parseInt(mtn.substring(2, 4))),
             new Date(year, month, date, hours, minutes, seconds)
         );
     }
 
     public mtn(): string {
-        return this._country + this._operationType + this._date;
+        return this._country + this._operationType.value().codeNumber.toString() + this._date;
     }
 
 }
